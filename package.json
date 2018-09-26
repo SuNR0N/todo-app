@@ -1,0 +1,14 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "To-Do App",
+  "main": "index.js",
+  "author": "annus.norbert@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "start:react": "http-server src/react -p 3000"
+  }
+}

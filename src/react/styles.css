@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.info {
+  font-style: italic;
+}
+
+.list-item input + label {
+  text-decoration: none;
+}
+
+.list-item input[checked] + label {
+  text-decoration: line-through;
+}
