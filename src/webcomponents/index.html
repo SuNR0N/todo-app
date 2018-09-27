@@ -3,19 +3,22 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Vanilla To-Do App</title>
+  <title>Web Components To-Do App</title>
   <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <div id="root"></div>
+  <main class="container-fluid">
+    <h1>Web Components To-Do App</h1>
+    <x-info></x-info>
+    <x-list></x-list>
+    <x-add-item button-text="Add" placeholder="Item name"></x-add-item>
+  </main>
 
   <!-- Load components -->
   <script src="components/add-item.js"></script>
-  <script src="components/container.js"></script>
   <script src="components/info.js"></script>
   <script src="components/list-item.js"></script>
   <script src="components/list.js"></script>
