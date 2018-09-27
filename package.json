@@ -9,6 +9,7 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "start:react": "http-server src/react -p 3000"
+    "start:react": "http-server src/react -p 3000",
+    "start:vanilla": "http-server src/vanilla -p 3000"
   }
 }
