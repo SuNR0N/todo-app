@@ -47,7 +47,7 @@ class Container extends React.Component {
 
     return (
       <main className="container-fluid">
-        <h1>To-Do App</h1>
+        <h1>React To-Do App</h1>
         <Info items={items} />
         <List
           items={items}

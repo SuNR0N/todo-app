@@ -1,4 +1,12 @@
-const AddItem = () => {
+const AddItem = ({
+  id,
+  text,
+  placeholder,
+} = {
+    id: 'addButton',
+    text: 'Add',
+    placeholder: 'Item name',
+  }) => {
   const inputGroupEl = document.createElement('div');
   const inputEl = document.createElement('input');
   const appendEl = document.createElement('div');
@@ -17,21 +25,21 @@ const AddItem = () => {
   };
 
   const render = () => {
-    inputGroupEl.className = 'input-group add-item';
+    inputGroupEl.className = 'input-group add-item col-6 p-0';
 
     inputEl.className = 'form-control';
-    inputEl.placeholder = 'Item name';
-    inputEl.setAttribute('aria-describedby', 'addButton');
-    inputEl.setAttribute('aria-label', 'Item name');
+    inputEl.placeholder = placeholder;
+    inputEl.setAttribute('aria-describedby', id);
+    inputEl.setAttribute('aria-label', placeholder);
     inputEl.setAttribute('type', 'text');
     inputGroupEl.appendChild(inputEl);
 
     appendEl.className = 'input-group-append';
 
     buttonEl.className = 'btn btn-primary';
-    buttonEl.id = 'addButton';
+    buttonEl.id = id;
     buttonEl.setAttribute('type', 'button');
-    buttonEl.innerText = 'Add';
+    buttonEl.innerText = text;
     buttonEl.addEventListener('click', clickHandler);
     appendEl.appendChild(buttonEl);
 

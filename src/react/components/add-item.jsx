@@ -25,7 +25,7 @@ class AddItem extends React.Component {
     } = this;
 
     return (
-      <div className="input-group add-item">
+      <div className="input-group add-item col-6 p-0">
         <input
           aria-describedby="addButton"
           aria-label="Item name"

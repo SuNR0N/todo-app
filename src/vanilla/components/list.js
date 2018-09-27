@@ -1,6 +1,5 @@
 const List = ({
   items = [],
-  onChange,
 }) => {
   const ulEl = document.createElement('ul');
 

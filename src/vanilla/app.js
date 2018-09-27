@@ -11,7 +11,7 @@
     rootEl.innerHTML = '';
     const container = Container({
       items,
-      title: 'To-Do App',
+      title: 'Vanilla To-Do App',
     }).render();
     rootEl.appendChild(container);
   }
@@ -28,16 +28,20 @@
   }
 
   function handleToggleItem(event) {
-    // TODO
+    const toggledItem = items.find((item) => item === event.detail.item);
+    if (toggledItem) {
+      toggledItem.done = event.detail.done;
+      render();
+    }
   }
 
-  function setListeners() {
+  function addListeners() {
     document.addEventListener('addItem', handleAddItem);
     document.addEventListener('toggleItem', handleToggleItem);
   }
 
   function init() {
-    setListeners();
+    addListeners();
     render();
   }
 
