@@ -26,6 +26,8 @@ yarn
 yarn start:react
 # Launch live-server with Vanilla app at http://localhost:3000
 yarn start:vanilla
+# Launch live-server with Vue.js app at http://localhost:3000
+yarn start:vue
 # Launch live-server with Web Components app at http://localhost:3000
 yarn start:webcomponents
 ```

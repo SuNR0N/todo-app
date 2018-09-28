@@ -8,6 +8,7 @@
   "scripts": {
     "start:react": "live-server src/react --port=3000",
     "start:vanilla": "live-server src/vanilla --port=3000",
+    "start:vue": "live-server src/vue --port=3000",
     "start:webcomponents": "live-server src/webcomponents --port=3000"
   },
   "devDependencies": {
