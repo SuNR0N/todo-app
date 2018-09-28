@@ -6,6 +6,7 @@
   "author": "annus.norbert@gmail.com",
   "license": "MIT",
   "scripts": {
+    "start:angular": "live-server src/angular --port=3000",
     "start:react": "live-server src/react --port=3000",
     "start:vanilla": "live-server src/vanilla --port=3000",
     "start:vue": "live-server src/vue --port=3000",

@@ -22,6 +22,8 @@ yarn
 ## Run
 
 ```sh
+# Launch live-server with Angular app at http://localhost:3000
+yarn start:angular
 # Launch live-server with React app at http://localhost:3000
 yarn start:react
 # Launch live-server with Vanilla app at http://localhost:3000
