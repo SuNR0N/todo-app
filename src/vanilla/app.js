@@ -5,15 +5,22 @@
     { label: 'Foo', done: false },
     { label: 'Bar', done: true },
   ];
+  let info;
+  let list;
+  let addItem;
 
   function render() {
-    const rootEl = document.querySelector('#root');
-    rootEl.innerHTML = '';
-    const container = Container({
-      items,
-      title: 'Vanilla To-Do App',
-    }).render();
-    rootEl.appendChild(container);
+    info = new Info(
+      document.querySelector('.info'),
+      { items }
+    );
+    list = new List(
+      document.querySelector('.list'),
+      { items }
+    );
+    addItem = new AddItem(
+      document.querySelector('.add-item')
+    );
   }
 
   function handleAddItem(event) {
@@ -23,7 +30,8 @@
         label: event.detail,
         done: false,
       });
-      render();
+      list.items = items;
+      info.items = items;
     }
   }
 
@@ -31,18 +39,19 @@
     const toggledItem = items.find((item) => item === event.detail.item);
     if (toggledItem) {
       toggledItem.done = event.detail.done;
-      render();
+      list.items = items;
+      info.items = items;
     }
   }
 
-  function addListeners() {
-    document.addEventListener('addItem', handleAddItem);
-    document.addEventListener('toggleItem', handleToggleItem);
+  function addEventListeners() {
+    addItem.container.addEventListener('addItem', handleAddItem);
+    list.container.addEventListener('toggleItem', handleToggleItem);
   }
 
   function init() {
-    addListeners();
     render();
+    addEventListeners();
   }
 
   init();

@@ -1,20 +1,42 @@
-const List = ({
-  items = [],
-}) => {
-  const ulEl = document.createElement('ul');
+class List {
+  static markup({ items }) {
+    return items
+      .map(() => '<li class="list-item"></li>')
+      .join('');
+  }
 
-  const render = () => {
-    ulEl.className = 'list';
-    items.forEach((item, index) => {
-      const listItem = ListItem({
-        id: `item-${index}`,
-        item,
-      }).render();
-      ulEl.appendChild(listItem);
-    });
+  get items() {
+    return this._items;
+  }
 
-    return ulEl;
-  };
+  set items(value) {
+    this._items = value;
+    this.render();
+  }
 
-  return { render };
-};
+
+  constructor(container, props = {}) {
+    if (container.dataset.ref === undefined) {
+      this.ref = Math.random();
+      List.refs[this.ref] = this;
+      container.dataset.ref = this.ref;
+      this.init(container, props);
+    } else {
+      return List.refs[container.dataset.ref];
+    }
+  }
+
+  init(container, props) {
+    this.container = container;
+    this._items = props.items;
+    this.render();
+  }
+
+  render() {
+    this.container.innerHTML = List.markup(this);
+    const listItems = this.container.querySelectorAll('.list-item');
+    listItems.forEach((listItem, index) => new ListItem(listItem, { item: this.items[index], id: `list-item-${index}` }));
+  }
+}
+
+List.refs = {};
